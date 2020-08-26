@@ -1,4 +1,5 @@
 package com.ubots.loja.controller;
+
 import com.ubots.loja.dto.ClienteDto;
 import com.ubots.loja.dto.ComprasDto;
 import com.ubots.loja.service.ClienteService;
@@ -8,11 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-
-
-
-
 import java.util.List;
 
 @RestController
