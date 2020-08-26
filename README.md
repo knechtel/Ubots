@@ -22,7 +22,7 @@ web, desktop ou modo texto);
 ● Disponibilize seu código no Github ou Bitbucket;
 
 ● Em caso de dúvidas entre em contato via e-mail
-(velasquinho@ubots.com.br);
+(@ubots.com.br);
 
 ● Saiba explicar todas as decisões tomadas.
 Vamos avaliar:
