@@ -12,6 +12,7 @@ public class ComprasDto implements Comparable<ComprasDto> {
     private Double valorTotal;
     private List<Produto> itens;
     private Integer contador = 0;
+    private String recomendacao;
 
     public String getCodigo() {
         return codigo;
@@ -66,5 +67,11 @@ public class ComprasDto implements Comparable<ComprasDto> {
         return Double.compare(o.getValorTotal(), this.valorTotal);
     }
 
+    public String getRecomendacao() {
+        return recomendacao;
+    }
 
+    public void setRecomendacao(String recomendacao) {
+        this.recomendacao = recomendacao;
+    }
 }
