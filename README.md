@@ -15,16 +15,26 @@ API com cadastro de clientes
 Esperamos que você:
 ● Implemente um software que resolva o problema acima na linguagem de sua
 preferência;
+
 ● Você pode optar por desenvolver uma API REST ou uma UI (que pode ser
 web, desktop ou modo texto);
+
 ● Disponibilize seu código no Github ou Bitbucket;
+
 ● Em caso de dúvidas entre em contato via e-mail
 (velasquinho@ubots.com.br);
+
 ● Saiba explicar todas as decisões tomadas.
 Vamos avaliar:
+
 ● Sua capacidade de resolução de problemas;
+
 ● Lógica de Programação;
+
 ● Design de Software;
+
 ● Clareza e simplicidade do código;
+
 ● Testes;
+
 ● Suas preocupações com performance
