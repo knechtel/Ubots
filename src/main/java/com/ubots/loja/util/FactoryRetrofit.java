@@ -3,7 +3,7 @@ package com.ubots.loja.util;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Factory {
+public class FactoryRetrofit {
 
     public static Retrofit getRetroFit(){
         Retrofit retrofit = new Retrofit.Builder()

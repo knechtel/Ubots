@@ -4,7 +4,7 @@ import com.ubots.loja.domain.Produto;
 import com.ubots.loja.dto.ClienteDto;
 import com.ubots.loja.dto.ComprasDto;
 import com.ubots.loja.util.ApiCadastro;
-import com.ubots.loja.util.Factory;
+import com.ubots.loja.util.FactoryRetrofit;
 import com.ubots.loja.util.FidelidadeComparator;
 import org.springframework.stereotype.Service;
 import retrofit2.Retrofit;
@@ -19,7 +19,7 @@ public class ClienteService {
     public List<ComprasDto> findClienteByMaiorTotalCompras() {
         List<ComprasDto> listCompra = null;
         try {
-            Retrofit retrofit = Factory.getRetroFit();
+            Retrofit retrofit = FactoryRetrofit.getRetroFit();
             ApiCadastro api = retrofit.create(ApiCadastro.class);
             listCompra = api.getCompra().execute().body();
             Collections.sort(listCompra);
@@ -34,7 +34,7 @@ public class ClienteService {
         List<ComprasDto> listCompra = null;
         List<ComprasDto> listSortCompra = new ArrayList<>();
         try {
-            Retrofit retrofit = Factory.getRetroFit();
+            Retrofit retrofit = FactoryRetrofit.getRetroFit();
             ApiCadastro api = retrofit.create(ApiCadastro.class);
             listCompra = api.getCompra().execute().body();
             Map<String, ComprasDto> mapCompras = new HashMap<>();
@@ -67,7 +67,7 @@ public class ClienteService {
     public List<ComprasDto> findClienteByYear() {
         List<ComprasDto> listReturn = new ArrayList<>();
         try {
-            Retrofit retrofit = Factory.getRetroFit();
+            Retrofit retrofit = FactoryRetrofit.getRetroFit();
             ApiCadastro api = retrofit.create(ApiCadastro.class);
             List<ComprasDto> listCompra = api.getCompra().execute().body();
 
@@ -89,7 +89,7 @@ public class ClienteService {
 
         Map<String, ComprasDto> mapCompras = new HashMap<>();
         try {
-            Retrofit retrofit = Factory.getRetroFit();
+            Retrofit retrofit = FactoryRetrofit.getRetroFit();
             ApiCadastro api = retrofit.create(ApiCadastro.class);
             listCompra = api.getCompra().execute().body();
 

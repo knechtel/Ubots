@@ -1,8 +1,6 @@
 package com.ubots.loja.service;
 
 import com.ubots.loja.dto.ComprasDto;
-import com.ubots.loja.service.ClienteService;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
