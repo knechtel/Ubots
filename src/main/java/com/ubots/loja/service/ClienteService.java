@@ -71,4 +71,27 @@ public class ClienteService {
     }
 
 
+    public List<ComprasDto> findClienteByYear() {
+        List<ComprasDto> listReturn = new ArrayList<>();
+        List<ComprasDto> listCompra = null;
+        try {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("http://www.mocky.io/v2/598b16861100004905515ec7/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            ApiCadastro api = retrofit.create(ApiCadastro.class);
+            listCompra = api.getCompra().execute().body();
+
+            for(ComprasDto comprasDto:listCompra){
+                if(comprasDto.getData().contains("2016")){
+                    listReturn.add(comprasDto);
+                }
+            }
+
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return listReturn;
+    }
+
 }

@@ -43,4 +43,8 @@ public class ClienteController {
     public List<ComprasDto> clienteByFidelidade() throws IOException {
         return clienteService.findClienteFiel();
     }
+    @RequestMapping(value = "/findByYear",produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+    public List<ComprasDto> findByYear2016() {
+        return clienteService.findClienteByYear();
+    }
 }
