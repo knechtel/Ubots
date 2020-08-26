@@ -8,7 +8,7 @@ import com.ubots.loja.util.Factory;
 import com.ubots.loja.util.FidelidadeComparator;
 import org.springframework.stereotype.Service;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 
 import java.util.*;
@@ -51,14 +51,11 @@ public class ClienteService {
             Set<String> chaves = mapCompras.keySet();
             for (String chave : chaves) {
                 if (chave != null) {
-                    System.out.println(chave + mapCompras.get(chave) + " " + mapCompras.get(chave).getContador());
                     listSortCompra.add(mapCompras.get(chave));
                 }
             }
             Collections.sort(listSortCompra, new FidelidadeComparator());
-            for (ComprasDto c : listSortCompra) {
-                System.out.println(c.getContador() + " - " + c.getCliente());
-            }
+
 
         } catch (Exception e1) {
             e1.printStackTrace();
@@ -69,11 +66,10 @@ public class ClienteService {
 
     public List<ComprasDto> findClienteByYear() {
         List<ComprasDto> listReturn = new ArrayList<>();
-        List<ComprasDto> listCompra = null;
         try {
             Retrofit retrofit = Factory.getRetroFit();
             ApiCadastro api = retrofit.create(ApiCadastro.class);
-            listCompra = api.getCompra().execute().body();
+            List<ComprasDto> listCompra = api.getCompra().execute().body();
 
             for (ComprasDto comprasDto : listCompra) {
                 if (comprasDto.getData().contains("2016")) {
@@ -93,10 +89,7 @@ public class ClienteService {
 
         Map<String, ComprasDto> mapCompras = new HashMap<>();
         try {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://www.mocky.io/v2/598b16861100004905515ec7/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+            Retrofit retrofit = Factory.getRetroFit();
             ApiCadastro api = retrofit.create(ApiCadastro.class);
             listCompra = api.getCompra().execute().body();
 
@@ -127,7 +120,7 @@ public class ClienteService {
                     clienteDtoReponse.setCpf(recomenda[0]);
                     clienteDtoReponse.setVinho(recomenda[1]);
                 }
-                System.out.println(chave + mapCompras.get(chave) + " " + mapCompras.get(chave).getContador());
+              //  System.out.println(chave + mapCompras.get(chave) + " " + mapCompras.get(chave).getContador());
                 if (chave.contains(clienteDto.getCpf()) && mapCompras.get(chave).getContador() > comprasDtoRecomenda.getContador()) {
                     comprasDtoRecomenda = mapCompras.get(chave);
                     String recomenda[] = chave.split("-");

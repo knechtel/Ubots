@@ -1,20 +1,18 @@
 package com.ubots.loja.controller;
-import com.ubots.loja.domain.Cliente;
 import com.ubots.loja.dto.ClienteDto;
 import com.ubots.loja.dto.ComprasDto;
 import com.ubots.loja.service.ClienteService;
-import com.ubots.loja.util.ApiCadastro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import retrofit2.Retrofit;
 
-import retrofit2.converter.gson.GsonConverterFactory;
 
-import java.io.IOException;
+
+
+
 import java.util.List;
 
 @RestController
