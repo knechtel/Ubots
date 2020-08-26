@@ -1,8 +1,8 @@
 package com.ubots.loja.util;
-import com.sun.xml.internal.rngom.digested.DListPattern;
+
 import com.ubots.loja.domain.Cliente;
 import com.ubots.loja.dto.ComprasDto;
-import okhttp3.ResponseBody;
+
 
 import retrofit2.Call;
 import retrofit2.http.*;
